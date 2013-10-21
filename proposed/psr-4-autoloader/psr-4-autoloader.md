@@ -28,7 +28,8 @@ another part of the "library" could use [PSR-0][] instead of PSR-4.
   * Optionally, documentation and meta information that belongs to the library,
     but might not be part of the directory structure.
   
-  Note: A larger project composed of multiple libraries may again be regarded as a library by itself, and be subject to this spec.
+  Note: A larger project composed of multiple libraries may again be regarded as
+  a library by itself, and be subject to this spec.
 
 - **class**: The term _class_ refers to PHP classes, interfaces, traits, and
   similar future resource definitions.
@@ -95,7 +96,7 @@ another part of the "library" could use [PSR-0][] instead of PSR-4.
   _resource path_ is not certain to exist in the _scheme_.
 
 - **conforming autoloader**: PHP autoloader code that implements follows these 
-  definitions and attempts to inlcude the correct _resource path_ based on 
+  definitions and attempts to include the correct _resource path_ based on 
   a valid _fully qualified class name_.
 
 
@@ -150,7 +151,7 @@ additional _namespace parts_, and MUST end in a _class part_.
     (as by the previous points, this will yield at least one match)
     
     2. For every combination of _namespace prefix_ and _resource base_ found,
-    take the _relative class name_ (relativ to the _namespace prefix_),
+    take the _relative class name_ (relative to the _namespace prefix_),
     replace every namespace separator in it with a scheme-appropriate separator,
     append the ".php" suffix, and append the result to the _resource base_.  
     The result will be refered to as _resource path_.
