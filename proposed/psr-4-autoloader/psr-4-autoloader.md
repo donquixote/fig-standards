@@ -95,9 +95,8 @@ another part of the "library" could use [PSR-0][] instead of PSR-4.
   _resource path_ will be `/path/to/acme-log/src/Writer/FileWriter.php`. The
   _resource path_ is not certain to exist in the _scheme_.
 
-- **conforming autoloader**: PHP autoloader code that implements follows these 
-  definitions and attempts to include the correct _resource path_ based on 
-  a valid _fully qualified class name_.
+- **autoloader**: A function named `__autoload()`, or a callback registered with
+  `spl_autoload_register()`.
 
 
 ## 3. Specification
