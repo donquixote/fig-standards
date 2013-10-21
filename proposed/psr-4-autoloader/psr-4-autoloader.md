@@ -9,13 +9,12 @@ interpreted as described in [RFC 2119](http://tools.ietf.org/html/rfc2119).
 
 This PSR describes a way to lay out a directory structure with files that
 define or make available PHP classes, so that they can be found by a compliant
-[autoloader][], and so that human readers can easily find the class definitions
+autoloader, and so that human readers can easily find the class definitions
 they are looking for.
 
 It can apply to a full "library" (as defined below) or just a part of that. E.g.
 another part of the "library" could use [PSR-0][] instead of PSR-4.
 
-[autoloader]: http://php.net/autoload
 [PSR-0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
 
 
