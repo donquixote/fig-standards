@@ -70,6 +70,10 @@ name and structure classes to be autoloaded using the described technique.
   (It is still a _base path_, even if the directory does not exist, or it is not
   a directory)
 
+- **directory prefix**: Any prefix of a _file path_ that is also a _base path_.
+  In other words: Every prefix of a _file path_ that ends with a _directory
+  separator_.
+
 - **autoloader**: A function or callback that is triggered by PHP if a yet
   undefined class name is being used in a script.  
   This could be a function named `__autoload()`, or a callback registered with
@@ -126,19 +130,17 @@ correspond to a _base path_, using the following rules:
     b. To prevent conflicts, different _namespace prefixes_ SHOULD NOT
     correspond to the same _base path_.
 
-3. The files MUST be laid out so that an autoloader can perform the
-following steps to locate and eventually include the correct _class file_:
+3. For every autoloadable class, there MUST be at least one class file that, if
+included, will make this class available.
 
-  1. For each _namespace prefix_ of the _autoloadable class name_, determine
-  all _base paths_ associated with it, if any.
+4. For every class file for a given class,
 
-  2. For every combination of _namespace prefix_ and _directory_ found,
-  take the _relative class name_  replace every _namespace separator_ in
-  it with a directory separator. Append the ".php" suffix, and append the result
-  to the _base path_, to obtain a _file path_.
-  
-  3. If any of the _file paths_ obtained this way points to an existing file,
-  then include or require exactly one of these files.
+  1. One of the _namespace prefixes_ of the class MUST correspond to one of the
+  _directory prefixes_ of the class file path.
+
+  2. The _relative file path_ MUST be equal to the result of replacing each
+  namespace separator in the _relative class name_ with a _directory separator_,
+  and appending the ".php" suffix.
 
 
 ## 4. Implementations
